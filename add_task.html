@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Add task</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/overlay.css">
+    <link rel="stylesheet" href="./styles/add_task.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="./js/include.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/add_task.js"></script>
+    <script src="./js/js_templates/add_task_templates.js"></script>
+    <script src="./js/js_templates/navbar_header_templates.js"></script>
+    <script src="./js/js_templates/contacts_templates.js"></script>
+    <script src="./js/overlay.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="initAddTask()" class="bg-color">
+    <section class="wrapper">
+        <nav w3-include-html="./assets/templates/navbar.html"></nav>
+        <section class="main">
+            <header w3-include-html="./assets/templates/header.html"></header>
+            <section id="form-content" class="content content-padding">
+                
+            </section>
+        </section>
+    </section>
+    <div id="toastmessage" class="toastmessage d-flex-c-c gap16">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Contacts</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/contacts.css">
+    <link rel="stylesheet" href="./styles/overlay.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./js/include.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/overlay.js"></script>
+    <script src="./js/add-edit_contacts.js"></script>
+    <script src="./js/js_templates/contacts_templates.js"></script>
+    <script src="./js/js_templates/navbar_header_templates.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="initContacts()" class="bg-color">
+    <section class="wrapper">
+        <nav w3-include-html="./assets/templates/navbar.html"></nav>
+        <section class="main">
+            <header w3-include-html="./assets/templates/header.html"></header>
+            <section class="content d-flex">
+                <div class="contactlist-area">
+                    <button class="btn-newcontact d-flex-c-c" onclick="openAddNewContactOverlay()">
+                        Add new contact
+                        <img src="./assets/img/icon_add_contact.png">
+                    </button>
+                    <div id="contactslist">
+
+                    </div>
+                </div>
+                <div id="contact-details-area" class="contact-details-area">
+                    <div class="d-flex-bw-st">
+                        <div class="headline-with-divider d-flex-ac gap32">
+                            <h1>Contacts</h1>
+                            <div class="head-dividing-line"></div>
+                            <h6>Better with a team</h6>
+                            <div class="head-dividing-line-horizontal d-none"></div>
+                        </div>
+                        <div class="contact-details-arrow"
+                            onclick="hideContactDetailsArea(); hideEditContactMobileMenu()">
+                            <img src="./assets/img/icon_arrow-left.png" alt="">
+                        </div>
+                    </div>
+                    <div id="contact-singleview" class="contact-singleview d-none">
+                        <div class="contact-singleview-nameblock d-flex-ac">
+                            <div id="singleview-initials" class="singleview-initials d-flex-c-c">
+                            </div>
+                            <div>
+                                <h2 id="singleview-name"></h2>
+                                <div class="singleview-buttons-panel d-flex-ac gap24">
+                                    <span class="singleview-button d-flex-ac gap8" onclick="openEditContactOverlay()">
+                                        <img class="singleview-button-icon" src="./assets/img/icon_edit.png" alt="">
+                                        <img class="singleview-button-icon-blue" src="./assets/img/icon_edit_blue.png"
+                                            alt="">
+                                        Edit
+                                    </span>
+                                    <span class="singleview-button d-flex-ac gap8"
+                                        onclick="deleteContact(); hideEditContactMobileMenu()">
+                                        <img class="singleview-button-icon" src="./assets/img/icon_trash.png" alt="">
+                                        <img class="singleview-button-icon-blue" src="./assets/img/icon_trash_blue.png"
+                                            alt="">
+                                        Delete
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-information d-flex-clm gap16">
+                            <h5>Contact Information</h5>
+                            <span class="contacts-mail-phone-head">Email</span>
+                            <span id="singleview-email" class="contact-email"></span>
+                            <span class="contacts-mail-phone-head">Phone</span>
+                            <span id="singleview-phone"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <button id="btn-newcontact-mobile" class="btn-mobile btn-newcontact-mobile d-flex-c-c"
+        onclick="openAddNewContactOverlay()">
+        <img src="./assets/img/icon_add_contact.png">
+    </button>
+    <button id="btn-editcontact-mobile" class="btn-mobile btn-editontact-mobile d-flex-c-c d-none"
+        onclick="showEditContactMobileMenu()">
+        <img src="./assets/img/icon_options.png">
+    </button>
+    <div id="edit-contact-mobile-menu" class="edit-contact-mobile-menu d-flex-clm d-flex-jc gap8 d-none">
+        <span class="d-flex-ac gap8" onclick="editContactViaMobileMenu()">
+            <img class="singleview-button-icon" src="./assets/img/icon_edit.png" alt="">
+            Edit
+        </span>
+        <span class="d-flex-ac gap8" onclick="deleteContactViaMobileMenu()">
+            <img class="singleview-button-icon" src="./assets/img/icon_trash.png" alt="">
+            Delete
+        </span>
+    </div>
+    <div id="overlay" class="overlay d-flex-c-c">
+        <div id="overlay-container" class="overlay-container">
+            <div class="overlay-container-closebutton d-flex-c-c" onclick="closeOverlay()">
+                <img src="./assets/img/icon_close.png" alt="X">
+            </div>
+            <div id="overlay-content" class="contacts-overlay d-flex">
+
+            </div>
+        </div>
+    </div>
+    <div id="toastmessage" class="toastmessage">
+    </div>
+</body>
+
+</html>

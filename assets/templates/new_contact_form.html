@@ -1,0 +1,38 @@
+<div class="overlay-container-closebutton closebutton-blue d-flex-c-c" onclick="closeOverlay()">
+    <img class="closebutton-icon" src="./assets/img/icon_close.png" alt="X">
+    <img class="closebutton-icon-white" src="./assets/img/icon_close_white.png" alt="X">
+</div>
+<div class="overlay-container-left d-flex-clm d-flex-jc gap8">
+    <h1>Add contact</h1>
+    <span>Tasks are better with a team!</span>
+    <div class="head-dividing-line-horizontal m-t-8"></div>
+</div>
+<div class="overlay-container-right d-flex-ac">
+    <div class="d-flex-c-c gap32 f-1">
+        <div class="add-contact-icon d-flex-c-c">
+            <img src="./assets/img/icon_contact.png" alt="">
+        </div>
+        <form id="addnew-contact-form" class="overlay-container-form d-flex-clm gap24 f-1" onsubmit="return false">
+            <div class="input-container">
+                <input id="contact-namefield" type="text" placeholder="Name" required>
+            </div>
+            <div class="input-container">
+                <input id="contact-emailfield" type="email" placeholder="Email" required>
+            </div>
+            <div class="input-container">
+                <input id="contact-phonefield" type="tel"  pattern="[0-9 ]*" placeholder="Phone" required>
+            </div>
+            <div class="d-flex gap8 addnew-contact-buttons">
+                <button class="btn-cancel btn-clear button-clear-font d-flex-c-c gap8" onclick="closeOverlay()">
+                    Cancel
+                    <img class="btn-cancel-icon" src="./assets/img/icon_close.png" alt="">
+                    <img class="btn-cancel-icon-blue" src="./assets/img/icon_close_blue.png" alt="">
+                </button>
+                <button class="button-font d-flex-c-c gap8" onclick="saveNewContact()">
+                    Create contact
+                    <img src="./assets/img/icon_success_white.png" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+.greeting-overlay {
+    position: fixed;
+    top: 80px;
+    bottom: 80px;
+    right: 0;
+    left: 0;
+    opacity: 1; 
+    animation: fadeOut 1s ease forwards 1.5s; 
+    pointer-events: none;
+    display: none;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1; 
+    }
+    to {
+        opacity: 0; 
+    }
+}
+
+.summary-container {
+    gap: 32px;
+}
+
+.summary-content {
+    gap: 32px;
+    min-width: 500px;
+    max-width: 600px;
+}
+
+.circle-bg {
+    height: 69px;
+    width: 69px;
+    background-color: #2A3647;
+    border-radius: 100%;
+    border: 1px solid #2A3647;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.circle-todo {
+    background-image: url('../assets/img/icon_edit_white.png');
+}
+
+.circle-done {
+    background-image: url('../assets/img/icon_success_white_big.png');
+}
+
+.priority-high-container {
+    height: 60px;
+    width: 60px;
+    background-color: #FF3D00;
+    border-radius: 100%;
+}
+
+.task-container {
+    flex: 1;
+    height: 168px;
+    cursor: pointer;
+    padding: 38px 19px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+}
+
+.task-container:hover {
+    background-color: #2A3647;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    color: #FFFFFF;
+    scale: 1.05;
+}
+
+.task-container:hover h5,
+.task-container:hover .task-numbers
+{
+    color: #FFFFFF;
+}
+
+.task-container:hover .circle-bg{
+    background-color: #FFFFFF;
+}
+
+
+.task-container:hover .circle-todo {
+    background-image: url('../assets/img/icon_edit_big.png');
+
+}
+
+.task-container:hover .circle-done {
+    background-image: url('../assets/img/icon_success_big.png');
+}
+
+@media (max-width: 1100px) {
+    .greeting-container {
+        padding-top: 60px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .headline-with-divider {
+        flex-direction: column;
+        align-items: start;
+        gap: 8px
+    }
+
+    .greeting-overlay {
+        display: flex;
+    }
+
+    .headline-with-divider .head-dividing-line-horizontal {
+        display: block !important;
+    }
+    .headline-with-divider .head-dividing-line,
+    .greeting-container {
+        display: none;
+    }
+
+    .summary-container {
+        gap: 16px;
+    }
+
+    .summary-content {
+        width: 100% auto;
+        max-width: auto;
+        min-width: auto;
+        gap: 16px
+    }
+
+    .task-container {
+        padding: 8px;
+        height: 110px;
+    }
+
+    .circle-bg,
+    .priority-high-container {
+        width: 40px;
+        height: 40px;
+        background-size: 16px 16px;
+    }
+}

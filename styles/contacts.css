@@ -1,0 +1,307 @@
+.contactlist-area {
+    background-color: #FFFFFF;
+    box-shadow: 4px 0px 6px 0px #00000014;
+    width: 456px;
+    padding: 32px 24px;
+    overflow-y: auto  ;
+}
+
+.contact-details-area {
+    padding: 80px 56px 32px 80px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.btn-newcontact {
+    width: 100%;
+    font-weight: 700;
+    font-size: 21px;
+    height: 56px;
+    gap: 16px;
+}
+
+.btn-mobile {
+    display: none;
+}
+
+.alphabetical-header {
+    padding: 15px 24px 15px 36px;
+    font-size: 20px;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+.contactlist-entry {
+    padding: 15px 24px;
+    gap: 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.contactlist-entry:hover {
+    background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
+}
+
+.contactlist-entry-active {
+    background: none !important;
+    background-color: #2A3647 !important;
+    color: #FFFFFF !important;
+}
+
+.entry-initials {
+    min-width: 42px;
+    min-height: 42px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.contact-name {
+    font-size: 20px;
+}
+
+.contact-email {
+    font-size: 16px;
+    color: #007CEE;
+}
+
+.contact-singleview {
+    margin-top: 36px;
+}
+
+.contact-details-arrow {
+    display: none;
+}
+
+.contact-singleview-nameblock {
+    gap: 32px;
+}
+
+.singleview-initials {
+    display: inline-flex;
+    min-width: 120px;
+    min-height: 120px;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 47px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.add-contact-icon {
+    display: inline-flex;
+    min-width: 120px;
+    min-height: 120px;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    background-color: #D1D1D1;
+}
+
+.singleview-button {
+    cursor: pointer;
+}
+
+.singleview-button-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.singleview-button-icon-blue {
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+.singleview-button:hover{
+    font-weight: 700;
+    color: #29ABE2;
+}
+
+.singleview-button:hover .singleview-button-icon-blue{
+    display: block;
+}
+
+.singleview-button:hover .singleview-button-icon{
+    display: none;
+}
+
+.contact-information {
+    margin-top: 48px;
+}
+
+.btn-cancel .btn-cancel-icon-blue {
+    display: none;
+}
+
+.btn-cancel:hover .btn-cancel-icon 
+{
+    display: none;
+}
+
+.btn-cancel:hover .btn-cancel-icon-blue {
+    display: block;
+}
+
+
+
+@media (max-width: 1240px) {
+
+    .contactlist-area {  
+        width: 360px;
+        padding: 32px 16px;
+    }
+    
+    .contact-details-area {
+        padding: 80px 24px;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .add-contact-icon {
+        min-width: 90px;
+        min-height: 90px;
+    }
+
+    .add-contact-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .headline-with-divider {
+        flex-direction: column;
+        align-items: start;
+        gap: 8px
+    }
+
+    .headline-with-divider .head-dividing-line-horizontal {
+        display: block !important;
+    }
+    .headline-with-divider .head-dividing-line {
+        display: none;
+    }
+
+    .contactlist-area {  
+        width: 100%;
+        padding: 32px 24px;
+    }
+
+    .btn-newcontact {
+        display: none;
+    }
+
+    .addnew-contact-buttons {
+        justify-content: center;
+    }
+
+    .addnew-contact-buttons .btn-clear {
+        display: none;
+    }
+
+    .btn-mobile {
+        display: block;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        position: absolute;
+        z-index: 1;
+        bottom: 120px;
+        right: 20px;
+    }
+
+    .contact-details-arrow {
+        cursor: pointer;
+        display: block;
+    }
+    
+    .contact-details-area {
+        position: absolute;
+        background-color: #F6F7F8;
+        width: 100%;
+        height: calc(100vh - 160px);
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0; 
+        transition: opacity 0.125s ease-in-out, visibility 0.125s ease-in-out;
+    }
+    
+    .contact-details-area.show {
+        visibility: visible;
+        opacity: 1; 
+    }
+
+    .contact-singleview-nameblock {
+        gap: 16px;
+    }
+
+    .singleview-initials {
+        width: 80px;
+        height: 80px;
+    }
+
+    .singleview-buttons-panel {
+        display: none;
+    }
+
+    .contactlist-entry-active {
+        background-color: transparent !important;
+        color: #000000 !important; 
+    }
+
+    .contactlist-entry-active:hover {
+        background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%) !important;
+    }
+
+    .edit-contact-icon,
+    .add-contact-icon {
+        position: absolute;
+        top: -60px;
+        z-index: 1;
+    }
+
+    .edit-contact-mobile-menu {
+        width: 116px;
+        height: 100px;
+        border-radius: 20px 20px 0px 20px;
+        padding: 16px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        position: absolute;
+        z-index: 2;
+        bottom: 146px;
+        right: 47px;
+    }
+
+    .edit-contact-mobile-menu span {
+        cursor: pointer;
+    }
+
+    .contacts-overlay {
+        flex-direction: column;
+    }
+
+    .add-contact-icon {
+        min-width: 120px;
+        min-height: 120px;
+    }
+
+
+    .add-contact-icon img {
+        width: auto;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 460px) {
+    .contactlist-area {  
+        padding: 32px 16px;
+    }
+}

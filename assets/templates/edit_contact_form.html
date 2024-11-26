@@ -1,0 +1,35 @@
+<div class="overlay-container-closebutton closebutton-blue d-flex-c-c" onclick="closeOverlay()">
+    <img class="closebutton-icon" src="./assets/img/icon_close.png" alt="X">
+    <img class="closebutton-icon-white" src="./assets/img/icon_close_white.png" alt="X">
+</div>
+<div class="overlay-container-left d-flex-clm d-flex-jc">
+    <h1>Edit Contact</h1>
+    <div class="head-dividing-line-horizontal m-t-8"></div>
+</div>
+<div class="overlay-container-right d-flex-ac">
+    <div class="d-flex-c-c gap32 f-1">
+        <div id="edit-contact-initials" class="edit-contact-icon singleview-initials d-flex-c-c">
+
+        </div>
+        <form id="edit-contact-form" class="overlay-container-form d-flex-clm gap24 f-1" onsubmit="return false">
+            <div class="input-container">
+                <input id="contact-namefield" type="text" placeholder="Name" required>
+            </div>
+            <div class="input-container">
+                <input id="contact-emailfield" type="email" placeholder="Email" required>
+            </div>
+            <div class="input-container">
+                <input id="contact-phonefield" type="tel" pattern="[0-9 ]*" placeholder="Phone" required>
+            </div>
+            <div class="d-flex gap16">
+                <button class="btn-clear button-clear-font d-flex-c-c" onclick="deleteContactViaOverlay()">
+                    Delete
+                </button>
+                <button class="button-font d-flex-c-c gap8" onclick="saveChangesToContact()">
+                    Save
+                    <img src="./assets/img/icon_success_white.png" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

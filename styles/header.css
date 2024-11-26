@@ -1,0 +1,85 @@
+.header {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 20px 40px;
+    height: 96px;
+    box-shadow: 0px 4px 4px 0px #0000001A;
+}
+
+.mobile-logo,
+.submenue-help {
+    display: none
+}
+
+.header-options {
+    margin-left: auto;
+}
+
+.submenue {
+    background-color: #2A3647;
+    position: absolute;
+    z-index: 1;
+    right: 24px;
+    top: 96px;
+    border-radius: 20px 0 20px 20px;
+    padding: 20px 16px;
+}
+
+.submenue-link {
+    color: #CDCDCD !important;
+    font-size: 16px
+}
+.submenue-link:hover {
+    color: #FFFFFF !important;
+}
+
+.desktop_help_symbol:hover {
+    scale: 1.1;
+}
+
+.user-logo {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    border: 3px solid #2A3647;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
+    color: #29ABE2
+}
+
+.user-logo:hover {
+  background-color: #0C2E621F;
+}
+
+
+
+@media (max-Width:1100px) {
+    .mobile-logo {
+        display: block;
+    }
+}
+
+@media (max-Width:800px) {
+
+    .header {
+        height: 80px;
+    }
+    .mobile_header_logo,
+    .submenue-help  {
+        display: block
+    }
+    
+    .headline {
+        display: none;
+    }
+    
+    .desktop_help_symbol{
+        display: none;
+    }
+
+    .submenue {
+        top: 80px;
+    }
+
+}

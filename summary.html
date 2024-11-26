@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Summary</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/summary.css">
+
+    <script src="./js/include.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/js_templates/summary_templates.js"></script>
+    <script src="./js/js_templates/navbar_header_templates.js"></script>
+    <script src="./js/summary.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="initSummary()" class="bg-color">
+    <section class="wrapper">
+        <nav w3-include-html="./assets/templates/navbar.html"></nav>
+        <section class="main">
+            <header w3-include-html="./assets/templates/header.html"></header>
+            <section class="content content-padding">
+                <div class="headline-with-divider d-flex-ac gap32">
+                    <h1>Join 360</h1>
+                    <div class="head-dividing-line"></div>
+                    <h6>Key Metrics at a Glance</h6>
+                    <div class="head-dividing-line-horizontal d-none"></div>
+                </div>
+                <div class="d-flex m-t-32 m-b-32 gap32">
+                    <div id="summary-content" class="summary-content d-flex-clm d-flex-ev-c f-1"></div>
+                    <div class="d-flex-c-c greeting-container">
+                        <div id="greeting" class="d-flex-clm">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="greeting-overlay" class="greeting-overlay bg-color d-flex-c-c d-flex-clm">
+                    
+                </div>
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>

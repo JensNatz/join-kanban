@@ -1,0 +1,221 @@
+body {
+  height: 100vh;
+}
+
+header {
+  padding: 80px 36px 10px 60px;
+}
+
+footer {
+  padding: 0 36px 60px 36px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-area {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  box-shadow: 0px 0px 14px 3px #0000000A;
+  padding: 36px;
+  width: 500px;
+}
+
+.join-logo {
+  width: 100px;
+  height: 121px;
+}
+
+.join-logo.with-animation {
+  visibility: hidden;
+  animation: show-logo 0s 1.95s forwards;
+}
+
+.join-logo-animated {
+  position: absolute;
+  z-index: 2;
+  animation: animate-logo 1.5s 0.5s forwards;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/img/join_logo_dark.png');
+  background-repeat: no-repeat;
+  background-size: 270px auto;
+  background-position: center;
+}
+
+.background {
+  position: absolute;
+  animation: animate-background 1.5s 0.5s forwards;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F6F7F8;
+  z-index: 1;
+}
+
+.login-btn {
+  height: 48px;
+}
+
+a.meta-link,
+.privacy-message {
+  color: #CDCDCD;
+}
+
+a.meta-link:hover {
+  color: #000000;
+}
+
+
+.title-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.back-arrow-signin {
+  position: absolute;
+  top: 50px;
+  left: 32px;
+}
+
+@keyframes animate-logo {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-size: 270px auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    width: 100px;
+    height: 121px;
+    top: 80px;
+    left: 60px;
+    background-size: 100px auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    width: 100px;
+    height: 121px;
+    top: 80px;
+    left: 60px;
+    background-size: 100px auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes animate-background {
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes show-logo {
+  to {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    padding: 40px 40px 10px 40px;
+    min-height: 130px;
+  }
+
+  header>.signup-link {
+    display: none;
+  }
+
+  footer>.signup-link {
+    display: flex !important;
+  }
+
+  footer {
+    padding: 0 24px 24px 24px;
+  }
+
+  .join-logo-animated {
+    background-image: url('../assets/img/join_logo.png');
+    background-size: 200px auto;
+  }
+
+  .join-logo {
+    width: 64px;
+    height: 78px;
+  }
+
+  .background {
+    background-color: #2a3647;
+  }
+
+  @keyframes animate-logo {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    99% {
+      width: 64px;
+      height: 78px;
+      top: 40px;
+      left: 40px;
+      background-size: 64px auto;
+      background-image: url('../assets/img/join_logo_dark.png');
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      width: 64px;
+      height: 78px;
+      top: 40px;
+      left: 40px;
+      background-size: 64px auto;
+      background-image: url('../assets/img/join_logo_dark.png');
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .login-area {
+    padding: 24px;
+    margin: 0 16px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+  }
+
+  a.link-as-button {
+    height: 48px;
+  }
+
+  .back-arrow-signin {
+    top: 30px;
+    left: 24px;
+  }
+}

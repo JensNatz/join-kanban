@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Sign In</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/login.css">
+
+    <script src="./js/include.js"></script>
+    <script src="./js/add-edit_contacts.js"></script>
+    <script src="./js/add_task.js"></script>
+    <script src="./js/js_templates/navbar_header_templates.js"></script>
+    <script src="./script.js"></script>
+    <script src="./js/sign_up.js"></script>
+    <script src="./js/database.js"></script>
+
+</head>
+
+<body class="bg-color d-flex-clm f-1">
+    <header>
+        <img class="join-logo" src="./assets/img/join_logo_dark.png" alt="">
+    </header>
+    <section class="d-flex-c-c f-1">
+        <div class="login-area d-flex-clm-c">
+            <a class="back-arrow back-arrow-signin" href="index.html">
+                <img src="./assets/img/icon_arrow-left.png" alt="back">
+            </a>
+            <h1>Sign up </h1>
+            <div class="head-dividing-line-horizontal m-t-16"></div>
+            <form class="login-form d-flex-clm-c gap16 m-t-24" onsubmit="validateUserSignUp()">
+                <div class="input-container">
+                    <input id="name" type="text" name="username" placeholder="Name" required>
+                </div>
+                <div class="input-container">
+                    <input id="email" type="email" name="E-Mail" placeholder="E-Mail" required>
+                </div>
+                <div class="input-container">
+                    <input id="password" type="password" name="Passwort" placeholder="Passwort" required 
+                        oninput="handlePasswordFieldChange('password', 'password-button')">
+                    <div id="password-button" class="input-password-icon no-password"
+                        onclick="showHidePass('password', 'password-button')"></div>
+                </div>
+                <div class="input-container">
+                    <input id="passwordC" type="password" name="Passwort" placeholder="Confirm Passwort" required 
+                        oninput="handlePasswordFieldChange('passwordC', 'password-confirm-button')">
+                    <div id="password-confirm-button" class="input-password-icon no-password"
+                        onclick="showHidePass('passwordC', 'password-confirm-button')"></div>
+                </div>
+                <span id="error-message" class="error-message d-none">Your passwords don't match. Please try again.</span>
+                <div class="d-flex-ac gap8">
+                    <input onchange="toggleSignupButton()" id="remember" name="remember" type="checkbox" class="checkbox d-none" required>
+                    <label for="remember" class="checkbox-icon"></label>
+                    <span class="privacy-message">I accept the <a href="privacy.html" class="link-blue">Privacy policy</a></span>
+                </div>
+                <button type="submit" id="signup-button" disabled class="button-font login-btn">Sign up</button>
+            </form>
+        </div>
+    </section>
+    <footer class="d-flex-c-c gap24 m-t-24">
+        <a class="meta-link" href="legal.html">Legal Notice</a>
+        <a class="meta-link" href="privacy.html">Privacy Policy</a>
+    </footer>
+    <div id="toastmessage" class="toastmessage d-flex-c-c gap16">
+    </div>
+</body>
+
+</html>

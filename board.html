@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Board</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/overlay.css">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/add_task.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/board.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./js/include.js"></script>
+    <script src="./js/board.js"></script>
+    <script src="./js/overlay.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/js_templates/contacts_templates.js"></script>
+    <script src="./js/js_templates/board_templates.js"></script>
+    <script src="./js/add-edit_contacts.js"></script>
+    <script src="./js/js_templates/add_task_templates.js"></script>
+    <script src="./js/js_templates/navbar_header_templates.js"></script>
+    <script src="./js/add_task.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="initBoard()" class="bg-color">
+    <section class="wrapper">
+        <nav w3-include-html="./assets/templates/navbar.html"></nav>
+        <section class="main">
+            <header w3-include-html="./assets/templates/header.html"></header>
+            <section class="content board-pad ">
+                <div class="board-head-section">
+                        <div class="d-flex-bw-c width-100 m-top-16">
+                            <h1>Board</h1>
+                            <img onclick="showAddTaskOverlay()" class="cursor board-mobile-button" src="./assets/img/addtask_mobile.png" alt="">
+                        </div>
+                        <div class="d-flex gap32 width-100">
+                            <div class="input-container">
+                                <input oninput="searchTasks()" id="search_input" type="text" placeholder="Find Task">
+                                <div class="input-search-icon"></div>
+                            </div>
+                            <button class="button-font board-desktop-button d-flex-c-c gap8" onclick="showAddTaskOverlay()">
+                                <span class="add-task-button-text text-nowarap">Add task</span>
+                                <img class="add-task-button-icon" src="./assets/img/icon_add_white.png" alt="">
+                            </button>
+                            
+                        </div>
+                </div>
+
+                <div id="board_tasks" class="all-task-slots m-top-16">
+                    <div class="board-task-width gap16">
+                        <div class="d-flex-bw-c">
+                            <span><b>To do</b></span>
+                            <div class="plus-button" onclick="handleAddTaskButton('to-do')"></div>
+                        </div>
+                        <div id="todo_tasks" ondrop="moveTo('to-do')"
+                            ondragover="allowDrop(event); highlightTaskDiv('todo')"
+                            ondragleave="removeHighlightTaskDiv('todo')" class="board-task-divs">
+                        </div>
+                    </div>
+                    <div class="board-task-width gap16">
+                        <div class="d-flex-bw-c">
+                            <span><b>In progress</b></span>
+                            <div class="plus-button" onclick="handleAddTaskButton('progress')"></div>
+                        </div>
+                        <div id="in_progress_tasks"
+                            ondrop="moveTo('progress')"
+                            ondragover="allowDrop(event); highlightTaskDiv('in_progress')"
+                            ondragleave="removeHighlightTaskDiv('in_progress')" class="board-task-divs">
+                        </div>
+                    </div>
+                    <div class="board-task-width gap16">
+                        <div class="d-flex-bw-c">
+                            <span><b>Await feedback</b></span>
+                            <div class="plus-button" onclick="handleAddTaskButton('feedback')"></div>
+                        </div>
+                        <div id="await_feedback_tasks"
+                            ondrop="moveTo('feedback')"
+                            ondragover="allowDrop(event); highlightTaskDiv('feedback')"
+                            ondragleave="removeHighlightTaskDiv('feedback')" class="board-task-divs">
+                        </div>
+                    </div>
+                    <div class="board-task-width gap16">
+                        <div class="d-flex-bw-c">
+                            <span><b>Done</b></span>
+                        </div>
+                        <div id="done_tasks" ondrop="moveTo('done')"
+                            ondragover="allowDrop(event); highlightTaskDiv('done')"
+                            ondragleave="removeHighlightTaskDiv('done')" class="board-task-divs m-b-32">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="overlay" class="overlay d-flex-c-c">
+                <div id="overlay-container" class="overlay-container">
+                    <div class="overlay-container-closebutton d-flex-c-c" onclick="closeOverlay()">
+                        <img src="./assets/img/icon_close.png" alt="X">
+                    </div>
+                    <div id="overlay-content" class="overlay-content padding-32"></div>
+                </div>
+            </div>
+            <div id="toastmessage" class="toastmessage d-flex-c-c gap16"></div>
+        </section>
+    </section>
+</body>
+</html>

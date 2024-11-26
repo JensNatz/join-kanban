@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <script src="./js/include.js"></script>
+    <script src="./script.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/js_templates/navbar_header_templates.js"></script>
+    <script src="./js/log_in.js"></script>
+</head>
+
+<body class="bg-color d-flex-clm">
+
+    <div class="join-logo-animated"></div>
+    <div class="background"></div>
+    <header class="d-flex-bw-c">
+        <img class="join-logo with-animation" src="./assets/img/join_logo_dark.png" alt="">
+        <div class="signup-link d-flex-c-c gap24">
+            Not a Join user?
+            <a href="sign_up.html" class="link-as-button d-flex-c-c">
+                Sign up
+            </a>
+        </div>
+    </header>
+
+    <section class="d-flex-c-c f-1">
+        <div class="login-area d-flex-clm d-flex-ac">
+            <h1> Log in </h1>
+            <div class="head-dividing-line-horizontal m-t-16"></div>
+        
+            <form class="login-form d-flex-clm-c gap16 m-t-24" onsubmit="return false">
+                <div class="input-container">
+                    <input id="email" type="email" name="E-Mail" placeholder="E-Mail">
+                </div>
+                <div class="input-container">
+                    <input id="password" type="password" name="Passwort" placeholder="Passwort" required
+                        oninput="handlePasswordFieldChange('password', 'password-button')">
+                    <div id="password-button" class="input-password-icon no-password"
+                        onclick="showHidePass('password', 'password-button')">
+                    </div>
+                </div>
+                <span id="error-message" class="error-message d-none">Check your email and password. Please try again.</span>
+                <div class="d-flex-ac gap8 m-t-16">
+                    <input id="remember" name="remember" type="checkbox" class="checkbox d-none">
+                    <label for="remember" class="checkbox-icon"></label>
+                    Remember me
+                </div>
+                
+                <div class="d-flex gap16 login-buttons m-t-8">
+                    <button class="button-font login-btn" type="submit" onclick="logInUser()">Log in</button>
+                    <button class="btn-clear button-clear-font login-btn" onclick="logInGuestUser()" type="button">Guest Log in</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="d-flex-clm gap24 m-t-16">
+        <div class="signup-link d-flex-c-c gap8 d-none">
+            Not a Join user?
+            <a href="sign_up.html" class="link-as-button d-flex-c-c">
+                Sign up
+            </a>
+        </div>
+        <div class="d-flex-c-c gap24">
+            <a class="meta-link" href="legal.html">Legal Notice</a>
+            <a class="meta-link" href="privacy.html">Privacy Policy</a>
+        </div>      
+    </footer>
+</body>
+
+</html>
